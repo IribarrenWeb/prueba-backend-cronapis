@@ -6,6 +6,9 @@ _Pequeña api de prueba para el cargo de backend en la empresa CRONAPIS_
 
 _Esta api se realizo con Laravel 8, utilizando el paquete de Laravel Sanctum para la implementacion de una autenticacion simple por API TOKENS._
 
+## Despliegue 📦
+
+_Hacer fork de este repositorio, utilizar algun servidor local como XAMPP, ejecutar las migraciones y utilizar postman para realizar las peticiones_
 
 ### Rutas de la api 📋
 
@@ -24,7 +27,7 @@ _Para obtener el token se requiere del campo ´email´ y ´password´_
 POST /api/login
 ```
 
-_Para obtener todas estas rutas se requiere del token del usuario registrado_
+_Para hacer peticiones a todas estas rutas se requiere del token del usuario registrado_
 
 ```
 GET /api/store - Obtener todos los registros
@@ -47,9 +50,6 @@ DELETE /api/store/{id} - Eliminar un registro en especifico por el campo 'id'
 
 _Los campos 'longitud' y  'Latitud' son almacenados en formato json en la base de datos en el campo 'ubicacion', y estos pueden ser utilizados para alguna api de mapas como google maps_
 
-## Despliegue 📦
-
-_Hacer fork de este repositorio, utilizar algun servidor local como XAMPP y utilizar postman para realizar las peticiones_
 
 ## Construido con 🛠️
 
