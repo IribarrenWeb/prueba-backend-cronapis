@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\StoreController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +16,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::get('/', function(){
+    return response(['message' => 'Api de prueba backend CRONAPIS']);
+});
+
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
+
+Route::group(['middleware'=> 'auth:sanctum'], function(){
+
+    Route::get('/store/paginate', [StoreController::class, 'paginate'])->name('store.paginate');
+    
+    Route::apiResource('store', StoreController::class)->middleware('auth:sanctum');
+
 });
